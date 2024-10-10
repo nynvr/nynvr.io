@@ -5,16 +5,6 @@
 
 ## Backend Service
 
-### To do
-- make sure .dockerignore (backend and web) are correct
-- Build to production
-    - I have a Django app and Next.js app in a single repo. They form a blog application. They have dockerfile files individually and can be run successfully using docker compose in my local machine. Guide me in detail how to deploy the blog app to AWS ECS and RDS using Github actions.
-- Documentation system
-    - [The Grand Unified Theory of Documentation](https://docs.divio.com/documentation-system/)
-- Once we reached some significant level of workload, we need Django app and NGINX in separate containers
-    - NGINX acts as reverse proxy - a server that sits in front of web servers and forwards client (e.g. web browser) requests to those web servers.
-    - Problem: If we scale the Django app, each instance will have its own NGINX. We don't want that. A single NGINX server can handle multiple Django app and can act as a load balancer as well.
-
 ### Local development
 - Configure environment
     - Please refer to `/backend/app/.env-template` for the required environment variables
@@ -77,10 +67,6 @@
 
 
 ## Web Service
-
-### To do
-- Is it possible to have run.sh
-    - run `npm run build` in run.sh - with capability to detect "local" or "production"
 
 ### Local development
 - Environment
