@@ -65,7 +65,7 @@ export default function RootLayout({
           >
             {children}
         </ThemeProvider>
-        <GoogleAnalytics gaId={process.env.GOOGLEANALYTICS_ID || 'bbb'} />
+        <GoogleAnalytics gaId={process.env.GOOGLEANALYTICS_ID || ''} />
       </body>
     </html>
   );

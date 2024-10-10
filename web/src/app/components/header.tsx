@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle, } from "@/app/components/ui/navigation-menu"
 import { ModeToggle } from "@/app/components/modeToggle";
 
-import { InitialDataInterface } from "@/app/lib/data"
+import { HomeBlogDataInterface } from "@/app/lib/api/blogs"
 
 interface HeaderProps {
-    data?: InitialDataInterface,
+    data?: HomeBlogDataInterface,
 }
 
 export default function Header({ data }: HeaderProps) {

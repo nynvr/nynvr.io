@@ -1,7 +1,7 @@
-import { InitialDataInterface } from "@/app/lib/data"
+import { HomeBlogDataInterface } from "@/app/lib/api/blogs"
 
 interface FooterProps {
-    data?: InitialDataInterface,
+    data?: HomeBlogDataInterface,
 }
 
 export default function Footer({ data }: FooterProps) {
