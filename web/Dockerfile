@@ -11,15 +11,8 @@ COPY ./app/package*.json ./
 RUN npm install
 
 # Copy the current directory contents into the container at /app
-COPY ./app/ .
+COPY ./app .
+COPY ./scripts /scripts
 
-# # Install dependencies
-RUN npm run build
-
-# For development
-# Start the app
-CMD ["npm", "run", "dev"]
-
-# For production
-# Start the app
-# CMD ["npm", "run", "start"]
+RUN chmod +x /scripts/run.sh
+CMD ["/scripts/run.sh"]
