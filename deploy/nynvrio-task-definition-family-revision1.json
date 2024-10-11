@@ -1,0 +1,56 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:029569477348:task-definition/nynvrio-task-definition-family:1",
+    "containerDefinitions": [
+        {
+            "name": "nynvrio-backend",
+            "image": "dkr.ecr.us-east-1.amazonaws.com/nynvrio-backend",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "nynvrio-backend-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "systemControls": []
+        }
+    ],
+    "family": "nynvrio-task-definition-family",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "2048",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2024-10-11T14:35:18.776Z",
+    "registeredBy": "arn:aws:iam::029569477348:user/noynovera+aws-admin",
+    "tags": []
+}
