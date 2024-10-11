@@ -72,6 +72,7 @@
 - Environment
     - Please refer to `/web/.env-template` for the required environment variables
     - Make sure that environment variables are properly set in `/web/.env`
+        - NODE_ENV=development
         - NYNVRIO_API_URL=http://backend:8000
         - NYNVRIO_TOKEN=f53c73f61a57935dfdd2384a9269c8c2793f0075
         - GOOGLEANALYTICS_ID=aaa
