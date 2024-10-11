@@ -28,11 +28,11 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - ./web/.env
+      - ./web/app/.env
     depends_on:
       - backend
     volumes:
-      - ./web:/app
+      - ./web/app:/app
       - /app/node_modules
       - /app/.next
 

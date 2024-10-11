@@ -55,6 +55,66 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                         <CardHeader>
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
+                                href="#">
+                                <RiAddBoxFill />
+                                <IoMdPerson />
+                                <FaLink />
+                            </Link>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="#">
+                                    Spectral
+                                </Link>
+                            </CardTitle>
+                            <CardDescription></CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            A cloud-based tool utilizing msconvert to transform between various mass spectrometry data formats
+                        </CardContent>
+                        <CardFooter className="text-xl"></CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                                target="_blank"
+                                href="https://nynvr.io/">
+                                <RiCheckboxMultipleFill />
+                                <IoMdPerson />
+                                <FaLink />
+                            </Link>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://nynvr.io/">
+                                    NYNVR
+                                </Link>
+                            </CardTitle>
+                            <CardDescription>Curious Software Engineer</CardDescription>
+                        </CardHeader>
+                        <CardContent>[2024-OCT] A personal portfolio and blogging website</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: FaReact, name: "React" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+                                    { icon: SiShadcnui, name: "Shadcn UI" },
+                                    { icon: SiDjango, name: "Django" },
+                                    { icon: FaDocker, name: "Docker" },
+                                    { icon: FaAws, name: "AWS" },
+                                    { icon: SiGithubactions, name: "GitHub Actions" },
+                                    { icon: BsCursorFill, name: "Cursor" }
+                                ]}
+                            />
+                        </CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                                target="_blank"
                                 href="https://www.eglint.com/">
                                 <RiCheckboxFill />
                                 <GrOrganization />
@@ -67,10 +127,10 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                     eGlint
                                 </Link>
                             </CardTitle>
-                            <CardDescription></CardDescription>
+                            <CardDescription>Real-time biomarker testing for health.</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            Real-time biomarker testing for health.
+                            [2024-JUN] Corporate website built with Wix Studio for a biotech company addressing a crucial need in critical care settings, where timely interventions can significantly impact patient outcomes
                         </CardContent>
                         <CardFooter className="text-xl">
                             <TechStackItemC
@@ -100,10 +160,10 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                     Southern Sky Advisories
                                 </Link>
                             </CardTitle>
-                            <CardDescription></CardDescription>
+                            <CardDescription>Your strategic partner for thriving in healthcare and technology markets</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            Your strategic partner for thriving in healthcare and technology markets.
+                            [2024-MAY] Corporate website built with Wix Studio for an advisory company in healthcare and technology industry
                         </CardContent>
                         <CardFooter className="text-xl">
                             <TechStackItemC
@@ -115,66 +175,6 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                 ]}
                             />
                         </CardFooter>
-                    </Card>
-
-                    <Card className="w-[350px]">
-                        <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
-                                target="_blank"
-                                href="https://nynvr.io/">
-                                <RiCheckboxMultipleFill />
-                                <IoMdPerson />
-                                <FaLink />
-                            </Link>
-                            <CardTitle>
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="https://nynvr.io/">
-                                    NYNVR
-                                </Link>
-                            </CardTitle>
-                            <CardDescription></CardDescription>
-                        </CardHeader>
-                        <CardContent>A portfolio and blogging website.</CardContent>
-                        <CardFooter className="text-xl">
-                            <TechStackItemC
-                                items={[
-                                    { icon: FaReact, name: "React" },
-                                    { icon: RiNextjsFill, name: "Next.js" },
-                                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
-                                    { icon: SiShadcnui, name: "Shadcn UI" },
-                                    { icon: SiDjango, name: "Django" },
-                                    { icon: FaDocker, name: "Docker" },
-                                    { icon: FaAws, name: "AWS" },
-                                    { icon: SiGithubactions, name: "GitHub Actions" },
-                                    { icon: BsCursorFill, name: "Cursor" }
-                                ]}
-                            />
-                        </CardFooter>
-                    </Card>
-
-                    <Card className="w-[350px]">
-                        <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
-                                target="_blank"
-                                href="#">
-                                <RiAddBoxFill />
-                                <IoMdPerson />
-                                <FaLink />
-                            </Link>
-                            <CardTitle>
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="#">
-                                    Spectral
-                                </Link>
-                            </CardTitle>
-                            <CardDescription></CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            A cloud-based tool utilizing msconvert to transform between various mass spectrometry data formats.
-                        </CardContent>
-                        <CardFooter className="text-xl"></CardFooter>
                     </Card>
                     
                     <Card className="w-[350px]">
@@ -195,7 +195,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             </CardTitle>
                             <CardDescription></CardDescription>
                         </CardHeader>
-                        <CardContent>A cloud-based project management tool.</CardContent>
+                        <CardContent>A cloud-based project management tool</CardContent>
                         <CardFooter className="text-xl"></CardFooter>
                     </Card>
 
@@ -217,7 +217,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             </CardTitle>
                             <CardDescription></CardDescription>
                         </CardHeader>
-                        <CardContent>A cloud-based, general-purpose quality management system (QMS).</CardContent>
+                        <CardContent>A cloud-based, general-purpose quality management system (QMS)</CardContent>
                         <CardFooter className="text-xl"></CardFooter>
                     </Card>
 
@@ -240,7 +240,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <CardDescription></CardDescription>
                         </CardHeader>
                         <CardContent>
-                            A cloud-based digital laboratory. Electronic Laboratory Notebook (ELN). Sample Management. Laboratoy Information Management System (LIMS).
+                            A cloud-based digital laboratory with Electronic Laboratory Notebook (ELN), Sample Management, and Laboratoy Information Management System (LIMS).
                         </CardContent>
                         <CardFooter className="text-xl"></CardFooter>
                     </Card>

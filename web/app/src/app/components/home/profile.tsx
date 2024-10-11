@@ -5,8 +5,8 @@ import Image from "next/image"
 // react icons
 import { DiDjango } from "react-icons/di"
 import { FaReact, FaPython, FaAws, FaDocker } from "react-icons/fa"
-import { RiTailwindCssFill } from "react-icons/ri"
-import { SiGithubactions, SiJavascript } from "react-icons/si"
+import { RiTailwindCssFill, RiNextjsFill   } from "react-icons/ri"
+import { SiGithubactions, SiJavascript, SiShadcnui } from "react-icons/si"
 import { BsCursorFill } from "react-icons/bs"
 
 // components
@@ -83,8 +83,16 @@ export default function HomeProfile({ data }: HomeProfileProps) {
                                 <FaReact className="text-3xl cursor-pointer" />
                             </TooltipWrapper>
                             
+                            <TooltipWrapper content={ data?.skills_section?.hard_skills_section?.nextjs?.name || '' }>
+                                <RiNextjsFill className="text-3xl cursor-pointer" />
+                            </TooltipWrapper>
+
                             <TooltipWrapper content={ data?.skills_section?.hard_skills_section?.tailwind?.name || '' }>
                                 <RiTailwindCssFill className="text-3xl cursor-pointer" />
+                            </TooltipWrapper>
+
+                            <TooltipWrapper content={ data?.skills_section?.hard_skills_section?.shadcnui?.name || '' }>
+                                <SiShadcnui className="text-3xl cursor-pointer" />
                             </TooltipWrapper>
                             
                             <TooltipWrapper content={ data?.skills_section?.hard_skills_section?.python?.name || '' }>

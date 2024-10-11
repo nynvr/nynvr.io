@@ -58,10 +58,13 @@ def get_blog_data(request):
                 "react": {
                     "name": "React",
                 },
+                "nextjs": {
+                    "name": "Next.js",
+                },
                 "tailwind": {
                     "name": "Tailwind CSS",
                 },
-                "shadcn": {
+                "shadcnui": {
                     "name": "shadcn/ui",
                 },
                 "python": {

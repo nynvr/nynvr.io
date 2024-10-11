@@ -48,10 +48,13 @@ export interface InitialDataInterface {
             react?: {
                 name?: string,
             },
+            nextjs?: {
+                name?: string,
+            },
             tailwind?: {
                 name?: string,
             },
-            shadcn?: {
+            shadcnui?: {
                 name?: string,
             },
             python?: {
@@ -154,10 +157,13 @@ export const blog_default_contents = {
             "react": {
                 "name": "React",
             },
+            "nextjs": {
+                "name": "Next.js",
+            },
             "tailwind": {
                 "name": "Tailwind CSS",
             },
-            "shadcn": {
+            "shadcnui": {
                 "name": "shadcn/ui",
             },
             "python": {
