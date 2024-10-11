@@ -4,11 +4,11 @@ import Link from "next/link"
 // react icons
 import { IconType } from "react-icons"
 import { IoMdPerson } from "react-icons/io"
-import { FaReact, FaAws, FaDocker, FaLink, FaWix, FaCheckSquare } from "react-icons/fa"
+import { FaReact, FaAws, FaDocker, FaLink, FaWix } from "react-icons/fa"
 import { GrOrganization } from "react-icons/gr"
 import { PiFileHtmlFill, PiFileCssFill } from "react-icons/pi"
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
-import { SiShadcnui, SiDjango, SiGithubactions, SiWagtail, SiJavascript } from "react-icons/si"
+import { RiNextjsFill, RiTailwindCssFill, RiCheckboxBlankLine, RiAddBoxFill, RiCheckboxFill, RiCheckboxMultipleFill } from "react-icons/ri"
+import { SiShadcnui, SiDjango, SiGithubactions, SiJavascript } from "react-icons/si"
 import { BsCursorFill } from "react-icons/bs"
 
 // components
@@ -56,7 +56,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://www.eglint.com/">
-                                <FaCheckSquare />
+                                <RiCheckboxFill />
                                 <GrOrganization />
                                 <FaLink />
                             </Link>
@@ -89,7 +89,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://www.southernskyadvisors.com/">
-                                <FaCheckSquare />
+                                <RiCheckboxFill />
                                 <GrOrganization />
                                 <FaLink />
                             </Link>
@@ -122,7 +122,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://nynvr.io/">
-                                <FaCheckSquare />
+                                <RiCheckboxMultipleFill />
                                 <IoMdPerson />
                                 <FaLink />
                             </Link>
@@ -144,7 +144,6 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                     { icon: RiTailwindCssFill, name: "Tailwind CSS" },
                                     { icon: SiShadcnui, name: "Shadcn UI" },
                                     { icon: SiDjango, name: "Django" },
-                                    { icon: SiWagtail, name: "Wagtail" },
                                     { icon: FaDocker, name: "Docker" },
                                     { icon: FaAws, name: "AWS" },
                                     { icon: SiGithubactions, name: "GitHub Actions" },
@@ -159,7 +158,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
-                                <FaCheckSquare />
+                                <RiAddBoxFill />
                                 <IoMdPerson />
                                 <FaLink />
                             </Link>
@@ -183,7 +182,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
-                                <FaCheckSquare />
+                                <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
                             </Link>
@@ -205,7 +204,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
-                                <FaCheckSquare />
+                                <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
                             </Link>
@@ -227,7 +226,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <Link className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
-                                <FaCheckSquare />
+                                <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
                             </Link>
