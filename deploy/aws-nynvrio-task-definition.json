@@ -1,5 +1,4 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:029569477348:task-definition/nynvrio-task-definition-family:1",
     "containerDefinitions": [
         {
             "name": "nynvrio-backend",
