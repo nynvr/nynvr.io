@@ -1,4 +1,5 @@
 {
+    "executionRoleArn": "arn:aws:iam::029569477348:role/github-actions-nynvrio",
     "containerDefinitions": [
         {
             "name": "nynvrio-backend",
@@ -24,22 +25,8 @@
     ],
     "family": "nynvrio-task-definition-family",
     "networkMode": "awsvpc",
-    "revision": 1,
     "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        }
-    ],
     "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
@@ -49,7 +36,5 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-10-11T14:35:18.776Z",
-    "registeredBy": "arn:aws:iam::029569477348:user/noynovera+aws-admin",
     "tags": []
 }
