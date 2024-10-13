@@ -23,7 +23,7 @@
             "systemControls": []
         }
     ],
-    "family": "nynvrio-task-definition-family",
+    "family": "nynvrio-task",
     "networkMode": "awsvpc",
     "volumes": [],
     "placementConstraints": [],
