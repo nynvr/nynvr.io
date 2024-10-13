@@ -65,7 +65,7 @@ permissions:
 jobs:
   deploy-backend:
     name: Deploy backend
-    runs-on: Linux x86_64
+    runs-on: ubuntu-latest
     environment: production
 
     steps:
