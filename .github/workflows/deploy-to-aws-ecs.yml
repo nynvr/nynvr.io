@@ -35,15 +35,19 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: ${{ env.AWS_REGION }}                     # set this to your preferred AWS region, e.g. us-west-1
-  IAM_ROLE: ${{ env.IAM_ROLE }}                         # set this to your IAM Role
-  ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}             # set this to your Amazon ECR repository name
-  ECS_SERVICE: ${{ env.ECS_SERVICE }}                   # set this to your Amazon ECS service name
-  ECS_CLUSTER: ${{ env.ECS_CLUSTER }}                   # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ${{ env.ECS_TASK_DEFINITION }}   # set this to the path to your Amazon ECS task definition
-                                                        # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: nynvrio-backend                       # set this to the name of the container in the
-                                                        # containerDefinitions section of your task definition
+  # This has been configured in the Github Actions environment secrets and variables
+  # https://github.com/nynvr/nynvr.io/settings/environments/4258650430/edit
+  #
+  # AWS_REGION:             # set this to your preferred AWS region, e.g. us-west-1
+  # IAM_ROLE:               # set this to your IAM Role
+  # ECR_REPOSITORY:         # set this to your Amazon ECR repository name
+  # ECS_SERVICE:            # set this to your Amazon ECS service name
+  # ECS_CLUSTER:            # set this to your Amazon ECS cluster name
+  # ECS_TASK_DEFINITION:    # set this to the path to your Amazon ECS task definition
+  #                         # file, e.g. .aws/task-definition.json
+  # CONTAINER_NAME:         # set this to the name of the container in the
+  #                         # containerDefinitions section of your task definition
+
   # Django-specific env variables
   DEBUG: ${{ secrets.DEBUG }}
   DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
