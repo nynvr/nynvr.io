@@ -85,13 +85,13 @@ export interface InitialDataInterface {
     projects_section?: {
         projects_label?: string,
         projects?: {
-            1?: {
+            0?: {
                 name?: string,
                 status?: string,
                 href?: string,
                 target?: string,
                 description?: string,
-                skills?: JSON,
+                skills?: string,
             }
         },
     },
@@ -194,13 +194,13 @@ export const blog_default_contents = {
     "projects_section": {
         "projects_label": "# PROJECTS",
         "projects": {
-            1: {
+            0: {
                 "name": "",
                 "status": "",
                 "href": "",
                 "target": "",
                 "description": "",
-                "skills" :{},
+                "skills" : "",
             },
         },
     },

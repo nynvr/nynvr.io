@@ -3,6 +3,18 @@
 
 
 
+
+# deployment
+- vpc
+- security group
+- ecs cluster
+- ecs service
+- ecs task definition
+- task
+- container
+
+
+
 ## Backend Service
 
 ### Local development

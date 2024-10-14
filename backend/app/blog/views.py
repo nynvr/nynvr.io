@@ -95,13 +95,13 @@ def get_blog_data(request):
         "projects_section": {
             "projects_label": "# PROJECTS",
             "projects": {
-                1: {
+                0: {
                     "name": "",
                     "status": "",
                     "href": "",
                     "target": "",
                     "description": "",
-                    "skills" :{},
+                    "skills" : "",
                 },
             },
         },

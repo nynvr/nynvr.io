@@ -23,7 +23,12 @@ env = environ.Env(
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# In dev, we need to have the .env file,
+#   the environment variables are being set in the docker compose.
+# In prod, we don't need to have the .env file,
+#   the environment variables are being set in the task definition.
+#
+# environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
