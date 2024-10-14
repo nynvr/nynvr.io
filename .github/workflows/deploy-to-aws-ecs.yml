@@ -73,7 +73,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v4
       with:
         role-to-assume: ${{ env.IAM_ROLE }}
-        role-session-name: github-actions-nynvrio
+        role-session-name: nynvrio-aws-github-actions-session
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Login to Amazon ECR
