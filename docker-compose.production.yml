@@ -2,11 +2,11 @@ services:
   backend:
     build:
       context: ./backend/
-      dockerfile: ./environments/development/Dockerfile
+      dockerfile: ./environments/production/Dockerfile
     ports:
       - "8000:8000"
     environment:
-      - DEBUG=True
+      - DEBUG=False
       - DJANGO_SECRET_KEY=development-django-secret
       - ALLOWED_HOSTS=*
       - DB_HOST=db
