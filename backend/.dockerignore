@@ -17,7 +17,6 @@ venv.bak/
 *.sqlite3
 db.sqlite3
 media/
-staticfiles/
 
 # Local environment files
 # .env
