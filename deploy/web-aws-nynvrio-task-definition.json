@@ -11,7 +11,7 @@
       "logConfiguration": {
           "logDriver": "awslogs",
           "options": {
-              "awslogs-group": "/ecs/nynvrio-task-web",
+              "awslogs-group": "/ecs/task-def-0",
               "mode": "non-blocking",
               "awslogs-create-group": "true",
               "max-buffer-size": "25m",
@@ -19,6 +19,7 @@
               "awslogs-stream-prefix": "ecs"
           },
           "secretOptions": []
+      }
     }],
     "volumes": [],
     "requiresCompatibilities": ["FARGATE"],
