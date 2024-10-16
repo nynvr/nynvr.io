@@ -13,7 +13,7 @@
     "requiresCompatibilities": ["FARGATE"],
     "networkMode": "awsvpc",
     "placementConstraints": [],
-    "family": "nynvrio-task",
+    "family": "nynvrio-task-backend",
     "memory": "2048",
     "cpu": "1024"
   }
