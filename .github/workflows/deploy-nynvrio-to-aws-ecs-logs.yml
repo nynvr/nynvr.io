@@ -1,4 +1,4 @@
-name: Deploy nynvrio to AWS ECS
+name: Deploy nynvrio logs to AWS ECS
 
 on:
   # Runs on pushes targeting the default branch
