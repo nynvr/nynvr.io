@@ -30,7 +30,7 @@
 - backend
   - we need to restart the server in order to copy the correct file to the container
 - web
-  - asdf
+  - we need to restart the server in order to copy the correct file to the container
 
 
 ## Backend Service

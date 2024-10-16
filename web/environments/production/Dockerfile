@@ -13,8 +13,9 @@ RUN npm install
 # Copy the current directory contents into the container at /app
 COPY ./app .
 COPY ./environments/production/run.sh /scripts/
+COPY ./environments/production/next.config.mjs /app/
 
-EXPOSE 3000
+EXPOSE 80
 
 RUN chmod +x /scripts/run.sh
 CMD ["/scripts/run.sh"]

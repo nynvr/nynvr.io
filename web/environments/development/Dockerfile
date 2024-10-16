@@ -13,6 +13,7 @@ RUN npm install
 # Copy the current directory contents into the container at /app
 COPY ./app .
 COPY ./environments/development/run.sh /scripts/
+COPY ./environments/development/next.config.mjs /app/
 
 EXPOSE 3000
 
