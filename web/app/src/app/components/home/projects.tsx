@@ -82,7 +82,11 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                 href="https://nynvr.io/">
                                 <RiCheckboxMultipleFill />
                                 <IoMdPerson />
-                                <FaLink />
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://nynvr.io/">
+                                    <FaLink />
+                                </Link>
                                 <Link className="flex items-center"
                                     target="_blank"
                                     href="https://github.com/nynvr/nynvr.io">

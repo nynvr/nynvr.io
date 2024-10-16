@@ -37,6 +37,14 @@ A personal portfolio and blogging website
   - AWS RDS
 - Github Actions
 
+# Production deployment
+- Backend
+    - Set ECS Service
+    - Set Temporary Task Definition
+- Web
+    - Set ECS Service
+    - Set Temporary Task Definition
+
 # Misc: Docker commands
 - `docker compose up --build`
 - `docker compose -f ./docker-compose.test-build.yml up --build`
