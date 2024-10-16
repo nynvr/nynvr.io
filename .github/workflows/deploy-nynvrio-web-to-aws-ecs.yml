@@ -1,4 +1,4 @@
-name: Deploy NYNVR.IO to AWS ECS
+name: Deploy web to AWS ECS
 
 on:
   # Runs on pushes targeting the default branch
@@ -14,21 +14,6 @@ env:
   ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}                             # set this to your Amazon ECR repository name
   ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}                                   # set this to your Amazon ECS cluster name
 
-  # BACKEND
-  BACKEND_ECS_SERVICE: ${{ secrets.BACKEND_ECS_SERVICE }}                   # set this to your Amazon ECS service name
-  BACKEND_ECS_TASK_DEFINITION: ${{ secrets.BACKEND_ECS_TASK_DEFINITION }}   # set this to the path to your Amazon ECS task definition
-                                                                            # file, e.g. .aws/task-definition.json
-  BACKEND_CONTAINER_NAME: ${{ secrets.BACKEND_CONTAINER_NAME }}             # set this to the name of the container in the
-                                                                            # containerDefinitions section of your task definition
-  DEBUG: ${{ secrets.DEBUG }}
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
-  ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
-  DB_HOST: ${{ secrets.DB_HOST }}
-  DB_PORT: ${{ secrets.DB_PORT }}
-  DB_NAME: ${{ secrets.DB_NAME }}
-  DB_USER: ${{ secrets.DB_USER }}
-  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-
   # WEB
   WEB_ECS_SERVICE: ${{ secrets.WEB_ECS_SERVICE }}
   WEB_ECS_TASK_DEFINITION: ${{ secrets.WEB_ECS_TASK_DEFINITION }}
@@ -43,8 +28,8 @@ permissions:
   id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
 
 jobs:
-  deploy-nynvrio:
-    name: Deploy NYNVR.IO
+  deploy-web:
+    name: Deploy web
     runs-on: ubuntu-latest
     environment: production
 
@@ -62,36 +47,6 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-
-    - name: BACKEND - Build, tag, and push image to Amazon ECR
-      id: build-image-backend
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        IMAGE_TAG: nynvrio-image-backend-${{ github.sha }}
-      run: |
-        # Build a docker container and
-        # push it to ECR so that it can
-        # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./backend -f ./backend/environments/production/Dockerfile
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    - name: BACKEND - Fill in the new image ID in the Amazon ECS task definition
-      id: task-def-backend
-      uses: aws-actions/amazon-ecs-render-task-definition@v1
-      with:
-        task-definition: ${{ env.BACKEND_ECS_TASK_DEFINITION }}
-        container-name: ${{ env.BACKEND_CONTAINER_NAME }}
-        image: ${{ steps.build-image-backend.outputs.image }}
-        environment-variables: |
-          DEBUG=${{ env.DEBUG }}
-          SECRET_KEY=${{ env.SECRET_KEY }}
-          ALLOWED_HOSTS=${{ env.ALLOWED_HOSTS }}
-          DB_HOST=${{ env.DB_HOST }}
-          DB_PORT=${{ env.DB_PORT }}
-          DB_NAME=${{ env.DB_NAME }}
-          DB_USER=${{ env.DB_USER }}
-          DB_PASSWORD=${{ secrets.DB_PASSWORD }}
 
     - name: WEB - Build, tag, and push image to Amazon ECR
       id: build-image-web
@@ -118,14 +73,6 @@ jobs:
           NYNVRIO_API_URL=${{ env.NYNVRIO_API_URL }}
           NYNVRIO_TOKEN=${{ env.NYNVRIO_TOKEN }}
           GOOGLEANALYTICS_ID=${{ env.GOOGLEANALYTICS_ID }}
-
-    - name: BACKEND - Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      with:
-        task-definition: ${{ steps.task-def-backend.outputs.task-definition }}
-        service: ${{ env.BACKEND_ECS_SERVICE }}
-        cluster: ${{ env.ECS_CLUSTER }}
-        wait-for-service-stability: true
 
     - name: WEB - Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1

@@ -1,4 +1,4 @@
-name: Deploy NYNVR.IO to AWS ECS
+name: Deploy backend to AWS ECS
 
 on:
   # Runs on pushes targeting the default branch
@@ -29,22 +29,13 @@ env:
   DB_USER: ${{ secrets.DB_USER }}
   DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
-  # WEB
-  WEB_ECS_SERVICE: ${{ secrets.WEB_ECS_SERVICE }}
-  WEB_ECS_TASK_DEFINITION: ${{ secrets.WEB_ECS_TASK_DEFINITION }}
-  WEB_CONTAINER_NAME: ${{ secrets.WEB_CONTAINER_NAME }}
-  NODE_ENV: ${{ secrets.NODE_ENV }}
-  NYNVRIO_API_URL: ${{ secrets.NYNVRIO_API_URL }}
-  NYNVRIO_TOKEN: ${{ secrets.NYNVRIO_TOKEN }}
-  GOOGLEANALYTICS_ID: ${{ secrets.GOOGLEANALYTICS_ID }}
-
 permissions:
   contents: read
   id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
 
 jobs:
-  deploy-nynvrio:
-    name: Deploy NYNVR.IO
+  deploy-backend:
+    name: Deploy backend
     runs-on: ubuntu-latest
     environment: production
 
@@ -93,44 +84,10 @@ jobs:
           DB_USER=${{ env.DB_USER }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
 
-    - name: WEB - Build, tag, and push image to Amazon ECR
-      id: build-image-web
-      env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        IMAGE_TAG: nynvrio-image-web-${{ github.sha }}
-      run: |
-        # Build a docker container and
-        # push it to ECR so that it can
-        # be deployed to ECS.
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./web -f ./web/environments/production/Dockerfile
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-    - name: WEB - Fill in the new image ID in the Amazon ECS task definition
-      id: task-def-web
-      uses: aws-actions/amazon-ecs-render-task-definition@v1
-      with:
-        task-definition: ${{ env.WEB_ECS_TASK_DEFINITION }}
-        container-name: ${{ env.WEB_CONTAINER_NAME }}
-        image: ${{ steps.build-image-web.outputs.image }}
-        environment-variables: |
-          NODE_ENV=${{ env.NODE_ENV }}
-          NYNVRIO_API_URL=${{ env.NYNVRIO_API_URL }}
-          NYNVRIO_TOKEN=${{ env.NYNVRIO_TOKEN }}
-          GOOGLEANALYTICS_ID=${{ env.GOOGLEANALYTICS_ID }}
-
     - name: BACKEND - Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def-backend.outputs.task-definition }}
         service: ${{ env.BACKEND_ECS_SERVICE }}
-        cluster: ${{ env.ECS_CLUSTER }}
-        wait-for-service-stability: true
-
-    - name: WEB - Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      with:
-        task-definition: ${{ steps.task-def-web.outputs.task-definition }}
-        service: ${{ env.WEB_ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
