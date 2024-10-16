@@ -17,7 +17,7 @@
 - `docker compose up --build`
 
 # ENV: Production / Build
-- `docker compose -f ./docker-compose.build.yml up --build`
+- `docker compose -f ./docker-compose.test-build.yml up --build`
   - we need to test build locally
 
 # python version management

@@ -11,11 +11,12 @@ services:
 
   backend:
     build:
-      context: ./backend/
-      dockerfile: ./environments/production/Dockerfile
+      context: .
+      dockerfile: ./deploy/backend/backend.production.Dockerfile
     ports:
       - "8000:8000"
     environment:
+      - SECRET_KEY=False
       - SECRET_KEY=production-django-secret
       - ALLOWED_HOSTS=*
       - DB_HOST=db
@@ -28,11 +29,13 @@ services:
       - SU_AUTH_TOKE=f53c73f61a57935dfdd2384a9269c8c2793f0075
     # depends_on:
     #   - db
+    # volumes:
+    #   - ./backend/app:/app
 
   web:
     build:
-      context: ./web
-      dockerfile: ./environments/production/Dockerfile
+      context: .
+      dockerfile: ./deploy/web/web.production.Dockerfile
     ports:
       - "80:80"
     environment:
@@ -42,10 +45,10 @@ services:
       - GOOGLEANALYTICS_ID=production-google-analytics
     depends_on:
       - backend
-    volumes:
-      - ./web/app:/app
-      - /app/node_modules
-      - /app/.next
+    # volumes:
+    #   - ./web/app:/app
+    #   - /app/node_modules
+    #   - /app/.next
 
 # volumes:
 #   postgres_data:

@@ -16,15 +16,14 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirements.txt .
+COPY ./backend/requirements.txt .
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
 # Copy the project code into the container
-COPY ./app /app
-COPY ./environments/production/settings.py /app/nynvrio/
-COPY ./environments/production/initialdata.20241009.json ./environments/production/run.sh /scripts/
-COPY ./environments/production/default.conf /etc/nginx/conf.d/default.conf
+COPY ./backend/app /app
+COPY ./deploy/backend/initialdata.20241009.json ./deploy/backend/backend.run.sh /scripts/
+COPY ./deploy/backend/backend.production.default.conf /etc/nginx/conf.d/default.conf
 
-RUN chmod +x /scripts/run.sh
-CMD ["/scripts/run.sh"]
+RUN chmod +x /scripts/backend.run.sh
+CMD ["/scripts/backend.run.sh"]

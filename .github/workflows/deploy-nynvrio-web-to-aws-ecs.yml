@@ -1,4 +1,4 @@
-name: Deploy web to AWS ECS
+name: Deploy nynvrio web to AWS ECS
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,8 +28,8 @@ permissions:
   id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
 
 jobs:
-  deploy-web:
-    name: Deploy web
+  deploy-nynvrio-web:
+    name: Deploy nynvrio web
     runs-on: ubuntu-latest
     environment: production
 

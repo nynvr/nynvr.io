@@ -11,11 +11,12 @@ services:
 
   backend:
     build:
-      context: ./backend/
-      dockerfile: ./environments/development/Dockerfile
+      context: .
+      dockerfile: ./deploy/backend/backend.development.Dockerfile
     ports:
       - "8000:8000"
     environment:
+      - DEBUG=True
       - SECRET_KEY=development-django-secret
       - ALLOWED_HOSTS=*
       - DB_HOST=db
@@ -28,11 +29,13 @@ services:
       - SU_AUTH_TOKE=f53c73f61a57935dfdd2384a9269c8c2793f0075
     # depends_on:
     #   - db
+    volumes:
+      - ./backend/app:/app
 
   web:
     build:
-      context: ./web
-      dockerfile: ./environments/development/Dockerfile
+      context: .
+      dockerfile: ./deploy/web/web.development.Dockerfile
     ports:
       - "3000:3000"
     environment:

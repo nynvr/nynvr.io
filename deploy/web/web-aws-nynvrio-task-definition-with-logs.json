@@ -1,0 +1,31 @@
+{
+    "executionRoleArn": "arn:aws:iam::029569477348:role/github-actions-nynvrio",
+    "containerDefinitions": [{
+      "name": "nynvrio-container-web",
+      "memory": "2048",
+      "essential": true,
+      "portMappings": [{
+        "containerPort": 80,
+        "protocol": "tcp"
+      }],
+      "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+              "awslogs-group": "/ecs/task-def-0",
+              "mode": "non-blocking",
+              "awslogs-create-group": "true",
+              "max-buffer-size": "25m",
+              "awslogs-region": "us-east-1",
+              "awslogs-stream-prefix": "ecs"
+          },
+          "secretOptions": []
+      }
+    }],
+    "volumes": [],
+    "requiresCompatibilities": ["FARGATE"],
+    "networkMode": "awsvpc",
+    "placementConstraints": [],
+    "family": "nynvrio-task-web",
+    "memory": "2048",
+    "cpu": "1024"
+  }

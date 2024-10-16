@@ -43,8 +43,8 @@ permissions:
   id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
 
 jobs:
-  deploy-nynvrio:
-    name: Deploy NYNVR.IO
+  deploy-nynvrio-app:
+    name: Deploy nynvrio app
     runs-on: ubuntu-latest
     environment: production
 
