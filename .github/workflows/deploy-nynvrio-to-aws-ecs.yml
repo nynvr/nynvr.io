@@ -1,4 +1,4 @@
-name: Deploy NYNVR.IO to AWS ECS
+name: Deploy nynvrio to AWS ECS
 
 on:
   # Runs on pushes targeting the default branch
