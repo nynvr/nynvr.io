@@ -1,0 +1,95 @@
+name: Deploy nynvrio backend to AWS ECS
+
+on:
+  # Runs on pushes targeting the default branch
+  # push:
+    # branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}                                             # set this to your preferred AWS region, e.g. us-west-1
+  IAM_ROLE: ${{ secrets.IAM_ROLE }}                                                 # set this to your IAM Role
+  ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}                                     # set this to your Amazon ECR repository name
+  ECS_CLUSTER: ${{ secrets.ECS_CLUSTER }}                                           # set this to your Amazon ECS cluster name
+
+  # BACKEND
+  BACKEND_DOCKERFILE: ${{ secrets.BACKEND_DOCKERFILE }}
+  BACKEND_ECS_SERVICE: ${{ secrets.BACKEND_ECS_SERVICE }}                           # set this to your Amazon ECS service name
+  BACKEND_ECS_TASK_DEFINITION: ${{ secrets.BACKEND_ECS_TASK_DEFINITION }}           # set this to the path to your Amazon ECS task definition
+                                                                                    # file, e.g. .aws/task-definition.json
+  BACKEND_ECS_TASK_DEFINITION_LOGS: ${{ secrets.BACKEND_ECS_TASK_DEFINITION_LOGS }
+  BACKEND_CONTAINER_NAME: ${{ secrets.BACKEND_CONTAINER_NAME }}                     # set this to the name of the container in the
+                                                                                    # containerDefinitions section of your task definition
+  DEBUG: ${{ secrets.DEBUG }}
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_USER: ${{ secrets.DB_USER }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+permissions:
+  contents: read
+  id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
+
+jobs:
+  deploy-nynvrio-backend:
+    name: Deploy nynvrio backend
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ env.IAM_ROLE }}
+        role-session-name: nynvrio-aws-github-actions-session
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: BACKEND - Build, tag, and push image to Amazon ECR
+      id: build-image-backend
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: nynvrio-image-backend-${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        # be deployed to ECS.
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . -f ${{ env.BACKEND_DOCKERFILE }}
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: BACKEND - Fill in the new image ID in the Amazon ECS task definition
+      id: task-def-backend
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.BACKEND_ECS_TASK_DEFINITION_LOGS }}
+        container-name: ${{ env.BACKEND_CONTAINER_NAME }}
+        image: ${{ steps.build-image-backend.outputs.image }}
+        environment-variables: |
+          DEBUG=${{ env.DEBUG }}
+          SECRET_KEY=${{ env.SECRET_KEY }}
+          ALLOWED_HOSTS=${{ env.ALLOWED_HOSTS }}
+          DB_HOST=${{ env.DB_HOST }}
+          DB_PORT=${{ env.DB_PORT }}
+          DB_NAME=${{ env.DB_NAME }}
+          DB_USER=${{ env.DB_USER }}
+          DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+
+    - name: BACKEND - Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def-backend.outputs.task-definition }}
+        service: ${{ env.BACKEND_ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true
