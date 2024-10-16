@@ -1,0 +1,19 @@
+{
+    "executionRoleArn": "arn:aws:iam::029569477348:role/github-actions-nynvrio",
+    "containerDefinitions": [{
+      "name": "nynvrio-container-web",
+      "memory": "2048",
+      "essential": true,
+      "portMappings": [{
+        "containerPort": 80,
+        "protocol": "tcp"
+      }]
+    }],
+    "volumes": [],
+    "requiresCompatibilities": ["FARGATE"],
+    "networkMode": "awsvpc",
+    "placementConstraints": [],
+    "family": "nynvrio-task-web",
+    "memory": "2048",
+    "cpu": "1024"
+  }
