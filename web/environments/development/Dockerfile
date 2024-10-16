@@ -14,5 +14,7 @@ RUN npm install
 COPY ./app .
 COPY ./environments/development/run.sh /scripts/
 
+EXPOSE 3000
+
 RUN chmod +x /scripts/run.sh
 CMD ["/scripts/run.sh"]
