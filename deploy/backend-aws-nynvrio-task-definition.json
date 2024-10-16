@@ -1,6 +1,7 @@
 {
     "executionRoleArn": "arn:aws:iam::029569477348:role/github-actions-nynvrio",
     "containerDefinitions": [{
+      "name": "nynvrio-container-backend",
       "memory": "2048",
       "essential": true,
       "portMappings": [{
