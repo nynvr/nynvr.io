@@ -3,6 +3,8 @@ A personal portfolio and blogging website
 # Getting started
 - Clone the repo
   - `git clone git@github.com:nynvr/nynvr.io.git`
+- Install Docker Desktop
+    - It has both Docker and Docker Compose
 - Run docker compose
   - `docker compose up --build`
   - This will run 3 services,
@@ -82,6 +84,8 @@ A personal portfolio and blogging website
 - `docker compose down`
 - `docker compose build`
 - `docker compose up`
+- `docker exec -it {container-name} bash`
+- `docker logs --follow`
 - `docker system prune -a`
 - `docker image prune -a`
 - `docker volume prune -a`

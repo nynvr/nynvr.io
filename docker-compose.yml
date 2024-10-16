@@ -1,13 +1,13 @@
 services:
 
-#   db:
-#     image: postgres:15
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     environment:
-#       - POSTGRES_DB=nynvriodb
-#       - POSTGRES_USER=nynvrio
-#       - POSTGRES_PASSWORD=nynvriopass
+  db:
+    image: postgres:alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=nynvrio_db
+      - POSTGRES_USER=nynvrio_user
+      - POSTGRES_PASSWORD=nynvrio_pass
 
   backend:
     build:
@@ -21,14 +21,14 @@ services:
       - ALLOWED_HOSTS=*
       - DB_HOST=db
       - DB_PORT=5432
-      - DB_NAME=nynvriodb
+      - DB_NAME=nynvrio_db
       - DB_USER=nynvrio_user
       - DB_PASSWORD=nynvrio_pass
-      - SUPERUSER=nynvr
-      - SU_PASSWORD=password
+      - DJANGO_SUPERUSER=nynvr
+      - DJANGO_SU_PASSWORD=password
       - SU_AUTH_TOKE=f53c73f61a57935dfdd2384a9269c8c2793f0075
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     volumes:
       - ./backend/app:/app
 
@@ -50,5 +50,5 @@ services:
       - /app/node_modules
       - /app/.next
 
-# volumes:
-#   postgres_data:
+volumes:
+  postgres_data:
