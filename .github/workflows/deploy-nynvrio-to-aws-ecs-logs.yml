@@ -19,7 +19,7 @@ env:
   BACKEND_ECS_SERVICE: ${{ secrets.BACKEND_ECS_SERVICE }}                           # set this to your Amazon ECS service name
   BACKEND_ECS_TASK_DEFINITION: ${{ secrets.BACKEND_ECS_TASK_DEFINITION }}           # set this to the path to your Amazon ECS task definition
                                                                                     # file, e.g. .aws/task-definition.json
-  BACKEND_ECS_TASK_DEFINITION_LOGS: ${{ secrets.BACKEND_ECS_TASK_DEFINITION_LOGS }
+  BACKEND_ECS_TASK_DEFINITION_LOGS: ${{ secrets.BACKEND_ECS_TASK_DEFINITION_LOGS }}
   BACKEND_CONTAINER_NAME: ${{ secrets.BACKEND_CONTAINER_NAME }}                     # set this to the name of the container in the
                                                                                     # containerDefinitions section of your task definition
   DEBUG: ${{ secrets.DEBUG }}
@@ -35,7 +35,7 @@ env:
   WEB_DOCKERFILE: ${{ secrets.WEB_DOCKERFILE }}
   WEB_ECS_SERVICE: ${{ secrets.WEB_ECS_SERVICE }}
   WEB_ECS_TASK_DEFINITION: ${{ secrets.WEB_ECS_TASK_DEFINITION }}
-  WEB_ECS_TASK_DEFINITION_LOGS: ${{ secrets.WEB_ECS_TASK_DEFINITION_LOGS }
+  WEB_ECS_TASK_DEFINITION_LOGS: ${{ secrets.WEB_ECS_TASK_DEFINITION_LOGS }}
   WEB_CONTAINER_NAME: ${{ secrets.WEB_CONTAINER_NAME }}
   NODE_ENV: ${{ secrets.NODE_ENV }}
   NYNVRIO_API_URL: ${{ secrets.NYNVRIO_API_URL }}

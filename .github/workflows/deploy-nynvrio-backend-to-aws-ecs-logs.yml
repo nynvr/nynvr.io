@@ -19,7 +19,7 @@ env:
   BACKEND_ECS_SERVICE: ${{ secrets.BACKEND_ECS_SERVICE }}                           # set this to your Amazon ECS service name
   BACKEND_ECS_TASK_DEFINITION: ${{ secrets.BACKEND_ECS_TASK_DEFINITION }}           # set this to the path to your Amazon ECS task definition
                                                                                     # file, e.g. .aws/task-definition.json
-  BACKEND_ECS_TASK_DEFINITION_LOGS: ${{ secrets.BACKEND_ECS_TASK_DEFINITION_LOGS }
+  BACKEND_ECS_TASK_DEFINITION_LOGS: ${{ secrets.BACKEND_ECS_TASK_DEFINITION_LOGS }}
   BACKEND_CONTAINER_NAME: ${{ secrets.BACKEND_CONTAINER_NAME }}                     # set this to the name of the container in the
                                                                                     # containerDefinitions section of your task definition
   DEBUG: ${{ secrets.DEBUG }}
