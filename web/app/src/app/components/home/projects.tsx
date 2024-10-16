@@ -3,12 +3,12 @@ import Link from "next/link"
 
 // react icons
 import { IconType } from "react-icons"
-import { IoMdPerson } from "react-icons/io"
+import { IoMdPerson, IoLogoGithub } from "react-icons/io"
 import { FaReact, FaAws, FaDocker, FaLink, FaWix } from "react-icons/fa"
 import { GrOrganization } from "react-icons/gr"
 import { PiFileHtmlFill, PiFileCssFill } from "react-icons/pi"
 import { RiNextjsFill, RiTailwindCssFill, RiCheckboxBlankLine, RiAddBoxFill, RiCheckboxFill, RiCheckboxMultipleFill } from "react-icons/ri"
-import { SiShadcnui, SiDjango, SiGithubactions, SiJavascript } from "react-icons/si"
+import { SiShadcnui, SiDjango, SiGithubactions, SiJavascript, SiAmazonecs, SiAmazonrds } from "react-icons/si"
 import { BsCursorFill } from "react-icons/bs"
 
 // components
@@ -53,13 +53,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
                                 <RiAddBoxFill />
                                 <IoMdPerson />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -77,13 +77,18 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
 
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://nynvr.io/">
                                 <RiCheckboxMultipleFill />
                                 <IoMdPerson />
                                 <FaLink />
-                            </Link>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://github.com/nynvr/nynvr.io">
+                                    <IoLogoGithub />
+                                </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -104,6 +109,8 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                                     { icon: SiDjango, name: "Django" },
                                     { icon: FaDocker, name: "Docker" },
                                     { icon: FaAws, name: "AWS" },
+                                    { icon: SiAmazonecs, name: "AWS ECS" },
+                                    { icon: SiAmazonrds, name: "AWS RDS" },
                                     { icon: SiGithubactions, name: "GitHub Actions" },
                                     { icon: BsCursorFill, name: "Cursor" }
                                 ]}
@@ -113,13 +120,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
 
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://www.eglint.com/">
                                 <RiCheckboxFill />
                                 <GrOrganization />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -146,13 +153,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
 
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="https://www.southernskyadvisors.com/">
                                 <RiCheckboxFill />
                                 <GrOrganization />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -179,13 +186,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                     
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
                                 <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -201,13 +208,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
 
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
                                 <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"
@@ -223,13 +230,13 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
 
                     <Card className="w-[350px]">
                         <CardHeader>
-                            <Link className="flex justify-start gap-2 text-sm content-center pb-2"
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2"
                                 target="_blank"
                                 href="#">
                                 <RiCheckboxBlankLine />
                                 <IoMdPerson />
                                 <FaLink />
-                            </Link>
+                            </div>
                             <CardTitle>
                                 <Link className="flex items-center"
                                     target="_blank"

@@ -210,7 +210,7 @@ export const blog_default_contents = {
         "contact_msg": "Feel free to reach out if you want to build something together, have a question, or just want to connect.",
         "email": "noynovera@gmail.com",
         "linkedin": "https://www.linkedin.com/in/noynovera/",
-        "github": "https://github.com/noynovera/",
+        "github": "https://github.com/nynvr/",
     },
 
     "footer_section": {
