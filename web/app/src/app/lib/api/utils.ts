@@ -149,7 +149,7 @@ export const blog_default_contents = {
         "skills_html": '<span class="font-black">Skills: </span>I thrive on the challenge of transforming ideas into solutions from inception to implementation.',
         "life_skills_html": '<span>Curiosity</span><span>&bull;</span><span>Lifelong Learning</span><span>&bull;</span><span>Pragmatism</span><span>&bull;</span><span>Simplicity</span><span>&bull;</span><span>Collaboration</span>',
         "soft_skills_html": '<span>People Management</span><span>&bull;</span><span>Project Management</span><span>&bull;</span><span>Software Engineering Management</span>',
-        "technical_concepts_html": '<span>Software Architecture</span><span>&bull;</span><span>TDD</span><span>&bull;</span><span>DevOps</span><span>&bull;</span><span>Shift Left Security</span><span>&bull;</span><span>AI as a Tool</span>',
+        "technical_concepts_html": '<span>Software Architecture</span><span>&bull;</span><span>TDD</span><span>&bull;</span><span>DevOps</span><span>&bull;</span><span>Shift Left Security</span><span>&bull;</span><span>AI-Augmented Development</span>',
         "hard_skills_section": {
             "javascript": {
                 "name": "JavaScript",

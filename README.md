@@ -13,6 +13,24 @@
 - task
 - container
 
+# ENV: Development
+- `docker compose up --build`
+
+# ENV: Production / Build
+- `docker compose -f ./docker-compose.build.yml up --build`
+  - we need to test build locally
+
+# python version management
+- ? no need to worry - dockerfile handles the version management
+
+# nodejs version management
+- ? no need to worry - dockerfile handles the version management
+
+# hot reload
+- backend
+  - we need to restart the server in order to copy the correct file to the container
+- web
+  - asdf
 
 
 ## Backend Service

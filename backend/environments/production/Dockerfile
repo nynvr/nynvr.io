@@ -23,7 +23,7 @@ RUN pip install --upgrade pip \
 # Copy the project code into the container
 COPY ./app /app
 COPY ./environments/production/settings.py /app/nynvrio/
-COPY ./environments/production/development.initialdata.20241009.json ./environments/production/run.sh /scripts/
+COPY ./environments/production/initialdata.20241009.json ./environments/production/run.sh /scripts/
 COPY ./environments/production/default.conf /etc/nginx/conf.d/default.conf
 
 RUN chmod +x /scripts/run.sh

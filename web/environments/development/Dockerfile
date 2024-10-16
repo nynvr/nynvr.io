@@ -12,7 +12,7 @@ RUN npm install
 
 # Copy the current directory contents into the container at /app
 COPY ./app .
-COPY ./scripts /scripts
+COPY ./environments/development/run.sh /scripts/
 
 RUN chmod +x /scripts/run.sh
 CMD ["/scripts/run.sh"]
