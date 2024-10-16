@@ -1,4 +1,4 @@
-name: Deploy Backend and Web services to Amazon ECS
+name: Deploy NYNVR.IO to Amazon ECS
 
 on:
   # Runs on pushes targeting the default branch
