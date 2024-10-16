@@ -25,7 +25,8 @@ export async function GetHomeBlogData() {
         console.log("Using contents from API.")
         return result.json()
     } catch (error) {
-
+        
+        console.error("Error fetching blog data:", error)
         console.log("Using default contents.")
         return blog_default_contents
     }
