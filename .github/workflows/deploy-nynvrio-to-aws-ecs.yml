@@ -63,8 +63,8 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Build, tag, and push image to Amazon ECR
-      id: build-image
+    - name: BACKEND - Build, tag, and push image to Amazon ECR
+      id: build-image-backend
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         IMAGE_TAG: nynvrio-image-backend-${{ github.sha }}
@@ -76,13 +76,13 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-    - name: Fill in the new image ID in the Amazon ECS task definition
-      id: task-def
+    - name: BACKEND - Fill in the new image ID in the Amazon ECS task definition
+      id: task-def-backend
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: ${{ env.BACKEND_ECS_TASK_DEFINITION }}
         container-name: ${{ env.BACKEND_CONTAINER_NAME }}
-        image: ${{ steps.build-image.outputs.image }}
+        image: ${{ steps.build-image-backend.outputs.image }}
         environment-variables: |
           DEBUG=${{ env.DEBUG }}
           SECRET_KEY=${{ env.SECRET_KEY }}
@@ -93,10 +93,44 @@ jobs:
           DB_USER=${{ env.DB_USER }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
 
-    - name: Deploy Amazon ECS task definition
+    - name: WEB - Build, tag, and push image to Amazon ECR
+      id: build-image-web
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: nynvrio-image-web-${{ github.sha }}
+      run: |
+        # Build a docker container and
+        # push it to ECR so that it can
+        # be deployed to ECS.
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./web -f ./web/environments/production/Dockerfile
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: WEB - Fill in the new image ID in the Amazon ECS task definition
+      id: task-def-web
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.WEB_ECS_TASK_DEFINITION }}
+        container-name: ${{ env.WEB_CONTAINER_NAME }}
+        image: ${{ steps.build-image-web.outputs.image }}
+        environment-variables: |
+          NODE_ENV=${{ env.NODE_ENV }}
+          NYNVRIO_API_URL=${{ env.NYNVRIO_API_URL }}
+          NYNVRIO_TOKEN=${{ env.NYNVRIO_TOKEN }}
+          GOOGLEANALYTICS_ID=${{ env.GOOGLEANALYTICS_ID }}
+
+    - name: BACKEND - Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        task-definition: ${{ steps.task-def-backend.outputs.task-definition }}
         service: ${{ env.BACKEND_ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true
+
+    - name: WEB - Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def-web.outputs.task-definition }}
+        service: ${{ env.WEB_ECS_SERVICE }}
         cluster: ${{ env.ECS_CLUSTER }}
         wait-for-service-stability: true
