@@ -7,19 +7,7 @@
       "portMappings": [{
         "containerPort": 80,
         "protocol": "tcp"
-      }],
-      "logConfiguration": {
-          "logDriver": "awslogs",
-          "options": {
-              "awslogs-group": "/ecs/task-def-0",
-              "mode": "non-blocking",
-              "awslogs-create-group": "true",
-              "max-buffer-size": "25m",
-              "awslogs-region": "us-east-1",
-              "awslogs-stream-prefix": "ecs"
-          },
-          "secretOptions": []
-      }
+      }]
     }],
     "volumes": [],
     "requiresCompatibilities": ["FARGATE"],
