@@ -9,13 +9,16 @@ A personal portfolio and blogging website
   - `docker compose up --build`
   - This will run 3 services,
      - backend service
+        - Django app
         - `http://0.0.0.0:8000/`
         - `http://0.0.0.0:8000/api/`
         - `http://0.0.0.0:8000/admin`
-        - Django app
+        - Default Django superuser: nynvr
+        - Default Django superuser password: password
+        - Default Django superuser auth token: f53c73f61a57935dfdd2384a9269c8c2793f0075
      - web service
-        - `http://0.0.0.0:3000/`
         - Next.js app
+        - `http://0.0.0.0:3000/`
      - db service
         - PostgreSQL
 
