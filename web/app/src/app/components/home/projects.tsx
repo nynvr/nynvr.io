@@ -261,7 +261,7 @@ export default function HomeProjects({ data }: HomeProjectsProps) {
                             <CardDescription></CardDescription>
                         </CardHeader>
                         <CardContent>
-                            A cloud-based digital laboratory with Electronic Laboratory Notebook (ELN), Sample Management, and Laboratoy Information Management System (LIMS).
+                            A cloud-based digital laboratory with Electronic Laboratory Notebook (ELN), Sample Management, and Laboratoy Information Management System (LIMS)
                         </CardContent>
                         <CardFooter className="text-xl"></CardFooter>
                     </Card>
