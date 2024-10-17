@@ -32,6 +32,8 @@ A personal portfolio and blogging website
   - No need to "restart" the services to make code changes
   - Docker Compose is using "volumes"
 
+# TODO - Testing
+
 # Tech stack
 - Python v3.12, Django v5.1
 - JavaScript, TypeScript, React, Next.js v14.2
@@ -44,14 +46,22 @@ A personal portfolio and blogging website
 
 # TODO - Coding standards 
 
-# TODO - Software architecture
+# TODO - Architecture
 
 # Maintenance tasks
 - keep tech stack versions up to date
 - keep application security (AppSec) healthy
 - keep documentation up to date
-  - readme
-  - architecture
+  - README
+    - Getting started
+    - Local development
+    - Testing
+    - Tech stack
+    - Coding standards
+    - Architecture
+  - `./backend/app/.python-version`
+  - `./web/app/.python-version`
+  - `./web/app/.nvmrc`
 
 # TODO - Release checklist
 
