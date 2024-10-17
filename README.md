@@ -43,6 +43,14 @@ A personal portfolio and blogging website
 - Github Actions
 
 # Production deployment  - Backend / Web services
+- Github Actions <> AWS Integration
+    - We are using IAM Role, OIDC, AssumeRoleWithWebIdentity
+    - [AWS Reference 1](https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/)
+- Set VPC
+- Set Security Groups
+- Set AWS ECR
+- Set AWS RDS
+- Set ECS Cluster
 - Set ECS Service
     - Step 1: Environment
         - Compute options: Launch type
