@@ -63,6 +63,10 @@ A personal portfolio and blogging website
   - `./web/app/.nvmrc`
 
 # TODO - Release checklist
+- update documentation
+- create release/tag
+    - semver
+    - release notes
 
 # Production deployment  - Backend / Web services
 - Github Actions <> AWS Integration
