@@ -42,13 +42,18 @@ A personal portfolio and blogging website
   - AWS RDS
 - Github Actions
 
+# TODO - Coding standards 
+
+# TODO - Software architecture
+
 # Maintenance tasks
-- update documentation
+- keep tech stack versions up to date
+- keep application security (AppSec) healthy
+- keep documentation up to date
   - readme
   - architecture
 
-# Release checklist
-- todo
+# TODO - Release checklist
 
 # Production deployment  - Backend / Web services
 - Github Actions <> AWS Integration
