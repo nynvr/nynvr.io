@@ -42,6 +42,14 @@ A personal portfolio and blogging website
   - AWS RDS
 - Github Actions
 
+# Maintenance tasks
+- update documentation
+  - readme
+  - architecture
+
+# Release checklist
+- todo
+
 # Production deployment  - Backend / Web services
 - Github Actions <> AWS Integration
     - We are using IAM Role, OIDC, AssumeRoleWithWebIdentity
