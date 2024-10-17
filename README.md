@@ -45,7 +45,8 @@ A personal portfolio and blogging website
 # Production deployment  - Backend / Web services
 - Github Actions <> AWS Integration
     - We are using IAM Role, OIDC, AssumeRoleWithWebIdentity
-    - [AWS Reference 1](https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/)
+        - [Use IAM roles to connect GitHub Actions to actions in AWS](https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/)
+    - All nynvr organization repositories' Github Actions are within the scope of this IAM Role.
 - Set VPC
 - Set Security Groups
 - Set AWS ECR
