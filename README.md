@@ -60,7 +60,6 @@ A personal portfolio and blogging website
     - Coding standards
     - Architecture
   - `./backend/app/.python-version`
-  - `./web/app/.python-version`
   - `./web/app/.nvmrc`
 
 # TODO - Release checklist
