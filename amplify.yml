@@ -16,7 +16,7 @@ applications:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: apps/web/.next
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
