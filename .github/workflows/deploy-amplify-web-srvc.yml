@@ -1,0 +1,39 @@
+name: Deploy Amplify web srvc
+
+on:
+  # Runs on pushes targeting the default branch
+  # push:
+    # branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}                                             # set this to your preferred AWS region, e.g. us-west-1
+  IAM_ROLE: ${{ secrets.IAM_ROLE }}                                                 # set this to your IAM Role
+
+permissions:
+  contents: read
+  id-token: write   # Allow GitHub's OIDC provider to create a JSON Web Token for every run
+
+jobs:
+  deploy-amplify-web-srvc:
+    name: Deploy Amplify web srvc
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ env.IAM_ROLE }}
+        role-session-name: nynvrio-aws-github-actions-session
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Trigger application build through webhook
+      run: |
+        URL="${{ secrets.AMPLIFY_WEB_SRVC_WEBHOOK_URL }}"
+        curl -X POST -d {} "$URL" -H "Content-Type: application/json"
