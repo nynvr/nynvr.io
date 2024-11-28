@@ -1,0 +1,70 @@
+<mxfile host="65bd71144e">
+    <diagram id="nEvBSG_II33ZP197EeSc" name="System Architecture">
+        <mxGraphModel dx="2644" dy="753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-7" value="NYNVR.IO" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=30;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="840" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-12" value="https://www.nynvr.io" style="shape=folder;fontStyle=1;tabWidth=140;tabHeight=40;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-13" value="Portfolio" style="html=1;" parent="Aqx8sS473rSUjkVLp6vu-12" vertex="1">
+                    <mxGeometry width="180" height="60" relative="1" as="geometry">
+                        <mxPoint x="10" y="50" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-16" value="https://blog.nynvr.io/" style="shape=folder;fontStyle=1;tabWidth=170;tabHeight=40;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="120" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-17" value="Blog" style="html=1;" parent="Aqx8sS473rSUjkVLp6vu-16" vertex="1">
+                    <mxGeometry width="220" height="60" relative="1" as="geometry">
+                        <mxPoint x="10" y="50" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-20" value="https://spectral.nynvr.io/" style="shape=folder;fontStyle=1;tabWidth=180;tabHeight=40;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="120" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="Aqx8sS473rSUjkVLp6vu-21" value="Spectral" style="html=1;" parent="Aqx8sS473rSUjkVLp6vu-20" vertex="1">
+                    <mxGeometry width="220" height="60" relative="1" as="geometry">
+                        <mxPoint x="10" y="50" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-1" value="Spectral" style="shape=umlFrame;whiteSpace=wrap;html=1;width=120;height=30;boundedLbl=1;verticalAlign=middle;align=left;spacingLeft=5;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="360" width="1440" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-8" value="Login Page" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="440" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-9" value="Dashboard Page" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="440" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-11" value="- Project list&lt;br&gt;- Func: Search project&lt;br&gt;- Func: Create project&lt;br&gt;- Func:&amp;nbsp;Rename project&lt;br&gt;- Func:&amp;nbsp;Update project&lt;br&gt;- Func:&amp;nbsp;Delete project" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingTop=5;spacingLeft=5;spacingBottom=5;spacingRight=5;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="500" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-12" value="Create Project Page" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="440" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-13" value="- Input project name&lt;br&gt;- Add description&lt;br&gt;- Set MS Convert parameters&lt;br&gt;- Add mass spec data to convert" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingTop=5;spacingLeft=5;spacingBottom=5;spacingRight=5;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="500" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-15" value="Update Project Page" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="440" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-16" value="- Update project name&lt;br&gt;- Edit description&lt;br&gt;- Add and remove mass spec data" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingTop=5;spacingLeft=5;spacingBottom=5;spacingRight=5;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="500" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-17" value="- Email&lt;br&gt;- Password&lt;br&gt;- Func: Forgot password&lt;br&gt;- Func: Sign up" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingTop=5;spacingLeft=5;spacingBottom=5;spacingRight=5;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="500" width="240" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-19" value="Profile Page" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="440" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Bs2yLP5T_rpIrXNxcRXD-20" value="- Email&lt;br&gt;- Func: Change email&lt;br&gt;- Func: Change password&lt;br&gt;- Func: Delete account" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingTop=5;spacingLeft=5;spacingBottom=5;spacingRight=5;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="500" width="240" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
