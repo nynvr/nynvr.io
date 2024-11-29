@@ -69,10 +69,6 @@ export default function HomeProfile() {
                         <span>People Management</span><span>&bull;</span><span>Project Management</span><span>&bull;</span><span>Software Engineering Management</span>
                     </div>
 
-                    <div className="flex flex-row gap-2 flex-wrap w-3/4 border-l-2 mb-5 pl-2 border-neutral-900 dark:border-neutral-100">
-                        <span>Software Architecture</span><span>&bull;</span><span>TDD</span><span>&bull;</span><span>DevOps</span><span>&bull;</span><span>AppSec</span><span>&bull;</span><span>AI-Augmented Software Engineering</span>
-                    </div>
-
                     <div className="mt-3 w-3/4 border-l-2 border-black dark:border-white mb-5 pl-2">
                         <div className="mt-1 flex flex-row flex-wrap gap-4">
                             
