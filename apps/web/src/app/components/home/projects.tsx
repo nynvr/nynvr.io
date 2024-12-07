@@ -4,7 +4,7 @@ import Link from "next/link"
 // react icons
 import { IconType } from "react-icons"
 import { IoMdPerson, IoLogoGithub } from "react-icons/io"
-import { FaDocker, FaLink, FaWix } from "react-icons/fa"
+import { FaLink, FaWix } from "react-icons/fa"
 import { GrOrganization } from "react-icons/gr"
 import { PiFileHtmlFill, PiFileCssFill } from "react-icons/pi"
 import { RiNextjsFill, RiTailwindCssFill, RiCheckboxBlankLine, RiAddBoxFill, RiCheckboxFill, RiCheckboxMultipleFill } from "react-icons/ri"
