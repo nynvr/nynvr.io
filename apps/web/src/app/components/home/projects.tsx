@@ -103,7 +103,6 @@ export default function HomeProjects() {
                                     { icon: RiNextjsFill, name: "Next.js" },
                                     { icon: RiTailwindCssFill, name: "Tailwind CSS" },
                                     { icon: SiShadcnui, name: "Shadcn UI" },
-                                    { icon: FaDocker, name: "Docker" },
                                     { icon: SiAwsamplify, name: "AWS Amplify" },
                                     { icon: BsCursorFill, name: "Cursor" }
                                 ]}
