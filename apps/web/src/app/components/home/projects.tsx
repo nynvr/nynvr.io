@@ -96,7 +96,7 @@ export default function HomeProjects() {
                             </CardTitle>
                             <CardDescription>Curious Software Engineer</CardDescription>
                         </CardHeader>
-                        <CardContent>[2024-OCT] A personal portfolio and blogging website</CardContent>
+                        <CardContent>[2024-DEC] A personal portfolio and blogging website</CardContent>
                         <CardFooter className="text-xl">
                             <TechStackItemC
                                 items={[
