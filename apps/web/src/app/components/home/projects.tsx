@@ -5,11 +5,11 @@ import Link from "next/link"
 import { IconType } from "react-icons"
 import { IoMdPerson, IoLogoGithub } from "react-icons/io"
 import { FaLink, FaWix } from "react-icons/fa"
-import { GrOrganization } from "react-icons/gr"
+import { GrOrganization, GrDocker } from "react-icons/gr"
 import { PiFileHtmlFill, PiFileCssFill } from "react-icons/pi"
 import { RiNextjsFill, RiTailwindCssFill, RiCheckboxBlankLine, RiAddBoxFill, RiCheckboxFill, RiCheckboxMultipleFill } from "react-icons/ri"
-import { SiShadcnui, SiAwsamplify, SiJavascript } from "react-icons/si"
-import { BsCursorFill } from "react-icons/bs"
+import { SiFastapi, SiShadcnui, SiAwsamplify, SiJavascript, SiDjango } from "react-icons/si"
+import { BiLogoPostgresql } from "react-icons/bi";
 
 // components
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/app/components/ui/card"
@@ -103,8 +103,7 @@ export default function HomeProjects() {
                                     { icon: RiNextjsFill, name: "Next.js" },
                                     { icon: RiTailwindCssFill, name: "Tailwind CSS" },
                                     { icon: SiShadcnui, name: "Shadcn UI" },
-                                    { icon: SiAwsamplify, name: "AWS Amplify" },
-                                    { icon: BsCursorFill, name: "Cursor" }
+                                    { icon: SiAwsamplify, name: "AWS Amplify" }
                                 ]}
                             />
                         </CardFooter>
@@ -252,6 +251,74 @@ export default function HomeProjects() {
                             A cloud-based digital laboratory with Electronic Laboratory Notebook (ELN), Sample Management, and Laboratoy Information Management System (LIMS)
                         </CardContent>
                         <CardFooter className="text-xl"></CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
+                                <RiCheckboxMultipleFill />
+                                <IoMdPerson />
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://github.com/nynvr/fastapi-nextjs-postgresql-template">
+                                    <IoLogoGithub />
+                                </Link>
+                            </div>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://nynvr.io/">
+                                    FastAPI + Next.js + PostgreSQL Template
+                                </Link>
+                            </CardTitle>
+                            <CardDescription></CardDescription>
+                        </CardHeader>
+                        <CardContent>[2024-DEC] Project template for building FastAPI + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: SiFastapi, name: "FastAPI" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
+                                    { icon: GrDocker, name: "Docker" }
+                                ]}
+                            />
+                        </CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
+                                <RiCheckboxMultipleFill />
+                                <IoMdPerson />
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://github.com/nynvr/django-nextjs-postgresql-template">
+                                    <IoLogoGithub />
+                                </Link>
+                            </div>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://nynvr.io/">
+                                    Django + Next.js + PostgreSQL Template
+                                </Link>
+                            </CardTitle>
+                            <CardDescription></CardDescription>
+                        </CardHeader>
+                        <CardContent>[2024-OCT] Project template for building Django + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: SiDjango, name: "Django" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: SiShadcnui, name: "Shadcn UI" },
+                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
+                                    { icon: GrDocker, name: "Docker" }
+                                ]}
+                            />
+                        </CardFooter>
                     </Card>
                 </div>
             </div>

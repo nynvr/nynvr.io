@@ -6,7 +6,6 @@ import Image from "next/image"
 import { FaReact, FaPython, FaAws, FaDocker } from "react-icons/fa"
 import { RiTailwindCssFill, RiNextjsFill   } from "react-icons/ri"
 import { SiJavascript, SiShadcnui, SiDjango } from "react-icons/si"
-import { BsCursorFill } from "react-icons/bs"
 
 // components
 import { Button } from "@/app/components/ui/button"
@@ -106,10 +105,6 @@ export default function HomeProfile() {
                             
                             <TooltipWrapper content="Docker">
                                 <FaDocker className="text-3xl cursor-pointer" />
-                            </TooltipWrapper>
-                            
-                            <TooltipWrapper content="Cursor">
-                                <BsCursorFill className="text-3xl cursor-pointer" />
                             </TooltipWrapper>
                         </div>
                     </div>
