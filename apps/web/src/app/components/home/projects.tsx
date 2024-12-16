@@ -52,8 +52,8 @@ export default function HomeProjects() {
                                 <IoMdPerson />
                                 <Link className="flex items-center"
                                     target="_blank"
-                                    href="#">
-                                    <FaLink />
+                                    href="https://github.com/nynvr/spectral">
+                                    <IoLogoGithub />
                                 </Link>
                             </div>
                             <CardTitle>
@@ -65,10 +65,86 @@ export default function HomeProjects() {
                             </CardTitle>
                             <CardDescription></CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            A cloud-based tool utilizing msconvert to transform between various mass spectrometry data formats
-                        </CardContent>
-                        <CardFooter className="text-xl"></CardFooter>
+                        <CardContent>[2024-DEC] A cloud-based tool utilizing msconvert to transform between various mass spectrometry data formats</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: SiDjango, name: "Django" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: SiShadcnui, name: "Shadcn UI" },
+                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
+                                    { icon: GrDocker, name: "Docker" }
+                                ]}
+                            />
+                        </CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
+                                <RiCheckboxMultipleFill />
+                                <IoMdPerson />
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://github.com/nynvr/django-nextjs-postgresql-template">
+                                    <IoLogoGithub />
+                                </Link>
+                            </div>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="#">
+                                    Django + Next.js + PostgreSQL Template
+                                </Link>
+                            </CardTitle>
+                            <CardDescription></CardDescription>
+                        </CardHeader>
+                        <CardContent>[2024-DEC] Project template for building Django + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: SiDjango, name: "Django" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: SiShadcnui, name: "Shadcn UI" },
+                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
+                                    { icon: GrDocker, name: "Docker" }
+                                ]}
+                            />
+                        </CardFooter>
+                    </Card>
+
+                    <Card className="w-[350px]">
+                        <CardHeader>
+                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
+                                <RiCheckboxMultipleFill />
+                                <IoMdPerson />
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="https://github.com/nynvr/fastapi-nextjs-postgresql-template">
+                                    <IoLogoGithub />
+                                </Link>
+                            </div>
+                            <CardTitle>
+                                <Link className="flex items-center"
+                                    target="_blank"
+                                    href="#">
+                                    FastAPI + Next.js + PostgreSQL Template
+                                </Link>
+                            </CardTitle>
+                            <CardDescription></CardDescription>
+                        </CardHeader>
+                        <CardContent>[2024-DEC] Project template for building FastAPI + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
+                        <CardFooter className="text-xl">
+                            <TechStackItemC
+                                items={[
+                                    { icon: SiFastapi, name: "FastAPI" },
+                                    { icon: RiNextjsFill, name: "Next.js" },
+                                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
+                                    { icon: GrDocker, name: "Docker" }
+                                ]}
+                            />
+                        </CardFooter>
                     </Card>
 
                     <Card className="w-[350px]">
@@ -251,74 +327,6 @@ export default function HomeProjects() {
                             A cloud-based digital laboratory with Electronic Laboratory Notebook (ELN), Sample Management, and Laboratoy Information Management System (LIMS)
                         </CardContent>
                         <CardFooter className="text-xl"></CardFooter>
-                    </Card>
-
-                    <Card className="w-[350px]">
-                        <CardHeader>
-                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
-                                <RiCheckboxMultipleFill />
-                                <IoMdPerson />
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="https://github.com/nynvr/fastapi-nextjs-postgresql-template">
-                                    <IoLogoGithub />
-                                </Link>
-                            </div>
-                            <CardTitle>
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="https://nynvr.io/">
-                                    FastAPI + Next.js + PostgreSQL Template
-                                </Link>
-                            </CardTitle>
-                            <CardDescription></CardDescription>
-                        </CardHeader>
-                        <CardContent>[2024-DEC] Project template for building FastAPI + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
-                        <CardFooter className="text-xl">
-                            <TechStackItemC
-                                items={[
-                                    { icon: SiFastapi, name: "FastAPI" },
-                                    { icon: RiNextjsFill, name: "Next.js" },
-                                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
-                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
-                                    { icon: GrDocker, name: "Docker" }
-                                ]}
-                            />
-                        </CardFooter>
-                    </Card>
-
-                    <Card className="w-[350px]">
-                        <CardHeader>
-                            <div className="flex justify-start gap-2 text-sm content-center pb-2">
-                                <RiCheckboxMultipleFill />
-                                <IoMdPerson />
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="https://github.com/nynvr/django-nextjs-postgresql-template">
-                                    <IoLogoGithub />
-                                </Link>
-                            </div>
-                            <CardTitle>
-                                <Link className="flex items-center"
-                                    target="_blank"
-                                    href="https://nynvr.io/">
-                                    Django + Next.js + PostgreSQL Template
-                                </Link>
-                            </CardTitle>
-                            <CardDescription></CardDescription>
-                        </CardHeader>
-                        <CardContent>[2024-OCT] Project template for building Django + Next.js + PostgreSQL applications containerized with Docker Compose</CardContent>
-                        <CardFooter className="text-xl">
-                            <TechStackItemC
-                                items={[
-                                    { icon: SiDjango, name: "Django" },
-                                    { icon: RiNextjsFill, name: "Next.js" },
-                                    { icon: SiShadcnui, name: "Shadcn UI" },
-                                    { icon: BiLogoPostgresql, name: "PostgreSQL" },
-                                    { icon: GrDocker, name: "Docker" }
-                                ]}
-                            />
-                        </CardFooter>
                     </Card>
                 </div>
             </div>

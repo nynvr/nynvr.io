@@ -41,7 +41,7 @@ export default function HomeProfile() {
                 </div>
                 <div className="py-3">
                     <h1 className="font-black text-2xl">Noy Novera</h1>
-                    <p>Curious Software Engineer</p>
+                    <p>Curious Software Engineer | Builder</p>
                 </div>
                 <div className="py-3">
                     <p>
