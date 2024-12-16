@@ -170,7 +170,7 @@ export default function HomeProjects() {
                                     NYNVR
                                 </Link>
                             </CardTitle>
-                            <CardDescription>Curious Software Engineer</CardDescription>
+                            <CardDescription>Curious Software Engineer, Builder</CardDescription>
                         </CardHeader>
                         <CardContent>[2024-DEC] A personal portfolio and blogging website</CardContent>
                         <CardFooter className="text-xl">

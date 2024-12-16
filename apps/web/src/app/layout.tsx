@@ -7,8 +7,8 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://nynvr.io'),
   applicationName: 'NYNVR Website',
-  title: "NYNVR - Noy Novera | Curious Software Engineer",
-  description: "NYNVR - Noy Novera | Curious Software Engineer - Building products that enhance health, protect the environment, digitalize government operations and services, advance education and innovate finance",
+  title: "NYNVR - Noy Novera | Curious Software Engineer, Builder",
+  description: "NYNVR - Noy Novera | Curious Software Engineer, Builder - Building products that enhance health, protect the environment, digitalize government operations and services, advance education and innovate finance",
   referrer: 'origin-when-cross-origin',
   keywords: [
     // personal brand
